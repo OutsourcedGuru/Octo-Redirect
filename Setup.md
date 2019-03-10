@@ -286,9 +286,7 @@ virtualenv venv
 source venv/bin/activate
 ```
 
-
-
-### Next
+### Edit the default OctoPrint code
 
 It suggests a change to [OctoPrint/src/octoprint/util/comm.py](https://github.com/foosel/OctoPrint/blob/master/src/octoprint/util/comm.py)
 
@@ -390,3 +388,23 @@ Visit the OctoPrint web interface and make the following edit:
 * OctoPrint -> upload a dry-run gcode file (10mm cube) and print it
 
 Let this run all the way through.
+
+## Performance
+I include some comparison information between using a Zero W and a 3A+ computer as the receiver. I used a standard 10mm cube file which has been modified for "dry-run" (no heat/extrusions/fans).
+
+| 10mmCube | ZeroW | 3A+ | Notes |
+|---|---|---|---|
+| Cores | 1 | 4 | |
+| ProcSpeed | 1GHz | 1.4GHz | |
+| RAM | 512MB | 512MB | |
+| gpu_mem set | 16MB | 16MB | |
+| Wi-fi | 2.4GHz | 5GHz&nbsp;&&nbsp;2.4GHz | Connected over 5GHz for 3A+|
+| USB | microUSB | Type A | ZeroW required adapter for serial cable|
+| **Lines&nbsp;of&nbsp;gcode** | **82010** | **82010** | Filesize 1.6MB |
+| **Time&nbsp;to&nbsp;print** | **55:32** | **50:44** | **Appears to be 9% faster on 3A+** |
+| **Avg&nbsp;lines/sec** | **24.613** | **26.941** | "82010 / ((55 * 60) + 32)", e.g. |
+| **Avg&nbsp;line&nbsp;length** | **19.72** | **19.72** | "1617160 / 82010" |
+| **Avg&nbsp;chars/sec** | **485.368** | **531.277** | "24.613 * 19.72", e.g. |
+| **Avg&nbsp;bits/sec** | **3882.944** | **4250.216** | "485.368 * 8", e.g. |
+| Controller board | MEGA2560 | MEGA2560 | Robo 3D OEM version |
+| Baudrate | 115200 | 115200 | It would be interesting to attempt to flash a new version of the Marlin firmware to increase the baudrate|
