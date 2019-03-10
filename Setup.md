@@ -390,12 +390,3 @@ Visit the OctoPrint web interface and make the following edit:
 * OctoPrint -> upload a dry-run gcode file (10mm cube) and print it
 
 Let this run all the way through.
-
-|Description|Version|Author|Last Update|
-|:---|:---|:---|:---|
-|Octo-Redirect|v0.1.0|OutsourcedGuru|March 9, 2019|
-
-|Donate||Cryptocurrency|
-|:-----:|---|:--------:|
-| ![eth-receive](https://user-images.githubusercontent.com/15971213/40564950-932d4d10-601f-11e8-90f0-459f8b32f01c.png) || ![btc-receive](https://user-images.githubusercontent.com/15971213/40564971-a2826002-601f-11e8-8d5e-eeb35ab53300.png) |
-|Ethereum||Bitcoin|
